@@ -23,6 +23,6 @@ __pycache__/
 *.py[cod]
 .venv
 env
-
+data/
 # OS
 .DS_STORE

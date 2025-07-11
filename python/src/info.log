@@ -1,0 +1,4 @@
+2025-07-11 18:13:17,509 INFO :: --- START ---
+2025-07-11 18:13:17,511 INFO :: Start collecting order book data: Wait 5 minutes...
+2025-07-11 18:18:18,809 INFO :: Collecting L2 data for BTCUSDT, with interval 1 is finished!
+2025-07-11 18:18:18,813 INFO :: --- END ---
