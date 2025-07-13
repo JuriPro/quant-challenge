@@ -23,10 +23,22 @@ async def main():
 
     # Register handlers
     mediator.register_command_handler(CollectL2data, CollectL2DataHandler())
+    mediator.register_command_handler(PreprocessRawL2Data, PreprocessBacktestData())
+    mediator.register_command_handler(PerformBacktestCmd, PerformBacktest())
 
     # Send a command
-    collect_l2_result = await mediator.send(CollectL2data(symbol='BTCUSDT'))
-    print(collect_l2_result)
+    # collect_l2_result = await mediator.send(CollectL2data(symbol='BTCUSDT',
+                                                          # depth=30,
+                                                          # collection_time_min=5,
+                                                          # collection_interval_sec=1))
+    # log.info(collect_l2_result)
+
+    backtest_data_fpath = await mediator.send(PreprocessRawL2Data())
+    log.info(backtest_data_fpath)
+    
+    backtest_report = await mediator.send(PerformBacktestCmd())
+    log.info(f"\n\nBacktest result:\n\n{backtest_report}")
+    
 
 
 if __name__ == "__main__":

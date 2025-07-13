@@ -1,0 +1,36 @@
+{
+    "0": {
+        "Size": -1,
+        "EntryBar": 6,
+        "ExitBar": 120,
+        "EntryPrice": 84969.65,
+        "ExitPrice": 83294.6,
+        "SL": 85861.514,
+        "TP": 83311.172,
+        "PnL": 1675.05,
+        "ReturnPct": 0.0197135095,
+        "EntryTime": 1752417676293,
+        "ExitTime": 1752417817792,
+        "Duration": 141499,
+        "Tag": null,
+        "Entry_\u03bb": 0.0,
+        "Exit_\u03bb": 0.0
+    },
+    "1": {
+        "Size": -1,
+        "EntryBar": 157,
+        "ExitBar": 241,
+        "EntryPrice": 82708.35,
+        "ExitPrice": 81630.85,
+        "SL": 83535.4335,
+        "TP": 81054.183,
+        "PnL": 1077.5,
+        "ReturnPct": 0.0130277052,
+        "EntryTime": 1752417862493,
+        "ExitTime": 1752417966992,
+        "Duration": 104499,
+        "Tag": null,
+        "Entry_\u03bb": 0.0,
+        "Exit_\u03bb": 0.0
+    }
+}
