@@ -90,4 +90,4 @@ class PerformBacktest:
         
         log.info(f"Backtest is finished...")
 
-        return stats
+        return print_result

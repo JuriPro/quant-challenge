@@ -1,5 +1,7 @@
 # Точка входа для реализации
 
+from CONFIG import cfg
+
 # CQRS support
 from application.handlers import *
 from application.mediator import Mediator
@@ -27,11 +29,15 @@ async def main():
     mediator.register_command_handler(PerformBacktestCmd, PerformBacktest())
 
     # Send a command
-    # collect_l2_result = await mediator.send(CollectL2data(symbol='BTCUSDT',
-                                                          # depth=30,
-                                                          # collection_time_min=5,
-                                                          # collection_interval_sec=1))
-    # log.info(collect_l2_result)
+
+    if not cfg['use_previous_data']:
+
+        collect_l2_result = await mediator.send(
+            CollectL2data(symbol=cfg['symbol'],
+                          depth=cfg['depth'],
+                          collection_time_min=cfg['collection_time_min'],
+                          collection_interval_sec=cfg['collection_interval_sec']))
+        log.info(collect_l2_result)
 
     backtest_data_fpath = await mediator.send(PreprocessRawL2Data())
     log.info(backtest_data_fpath)

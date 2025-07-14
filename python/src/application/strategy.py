@@ -7,7 +7,7 @@ from backtesting import Strategy
 class OrderBookStrategy(Strategy):
 
     delta_jump_level = 15
-   
+
     def init(self):
         super().init()
 
@@ -38,8 +38,6 @@ class OrderBookStrategy(Strategy):
         super().next()
         
 
-from pprint import pprint
-        
 def save_strategy_result(stats: dict, save_folder_path=None) -> str:
     
     output_str = '\n'.join([f"{k:<25}: {round(v,5) if isinstance(v, float) else v}" for k,v in stats.items() if not k.startswith('_')])
@@ -55,5 +53,3 @@ def save_strategy_result(stats: dict, save_folder_path=None) -> str:
             json.dump(parsed, f, indent=4)   
 
     return output_str
-    
-
