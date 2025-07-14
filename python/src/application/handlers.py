@@ -2,14 +2,12 @@ import json
 import logging
 import asyncio
 import datetime as dt
-import numpy as np
 import pandas as pd
 
 from application.contracts import *
 from application.helpers import SnapshotCalc
 from infrastructure.adapters.bybit import BybitClient
 
-from backtesting import Strategy
 from backtesting import Backtest
 from application.strategy import OrderBookStrategy, save_strategy_result
 
