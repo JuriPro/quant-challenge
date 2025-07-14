@@ -20,7 +20,6 @@ log = logging.getLogger()
 
 
 async def main():
-
     mediator = Mediator()
 
     # Register handlers
@@ -29,9 +28,7 @@ async def main():
     mediator.register_command_handler(PerformBacktestCmd, PerformBacktest())
 
     # Send a command
-
     if not cfg['use_previous_data']:
-
         collect_l2_result = await mediator.send(
             CollectL2data(symbol=cfg['symbol'],
                           depth=cfg['depth'],
@@ -41,15 +38,12 @@ async def main():
 
     backtest_data_fpath = await mediator.send(PreprocessRawL2Data())
     log.info(backtest_data_fpath)
-    
+
     backtest_report = await mediator.send(PerformBacktestCmd())
     log.info(f"\n\nBacktest result:\n\n{backtest_report}")
-    
 
 
 if __name__ == "__main__":
     log.info("--- START ---")
-
     asyncio.run(main())
-
     log.info("--- END ---")

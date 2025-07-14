@@ -28,8 +28,8 @@
 - Исходный код (датаингест, сигнал, стратегия, симуляция)
 
 ## USAGE: Python Implementation
-1. "uv run main.py" Or python main.py
-2. The Report/Signal/Trades will be saves in to "python/report/" folder
+1. Frome console: `uv run main.py` OR `python main.py`
+2. The `Report / Signal / Trades` will be saves in to `python/report/` folder
 
 Report example:
 
