@@ -27,11 +27,16 @@
 
 - Исходный код (датаингест, сигнал, стратегия, симуляция)
 
-## Usage: Python Implementation
-1. Frome console: `uv run main.py` OR `python main.py`
-2. The `Report / Signal / Trades` will be saves in to `python/report/` folder
+------------
 
-Report example:
+### Usage: Python Implementation
+
+1. __*Frome console: `uv run main.py` OR `python main.py`*__
+2. __*The `Report / Signal / Trades` will be saved in to `python/report/` folder*__
+
+------------
+
+#### Report example:
 
 - Start                    : 2025-07-13 14:41:08.493000
 - End                      : 2025-07-13 14:46:06.992000
