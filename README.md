@@ -54,7 +54,7 @@ Report example:
 - Avg. Drawdown [%]        : -0.07513
 - Max. Drawdown Duration   : 0 days 00:01:12
 - Avg. Drawdown Duration   : 0 days 00:00:13.611000
-- '# Trades'                 : 2
+- `# Trades`                 : 2
 - Win Rate [%]             : 100.0
 - Best Trade [%]           : 1.97135
 - Worst Trade [%]          : 1.30277

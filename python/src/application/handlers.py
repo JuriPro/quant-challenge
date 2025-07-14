@@ -2,6 +2,7 @@ import json
 import logging
 import asyncio
 import datetime as dt
+import numpy as np
 import pandas as pd
 
 from application.contracts import *
@@ -62,7 +63,6 @@ class PreprocessBacktestData:
                 prev_snapshot = curr_snapshot
 
         l2_df = pd.DataFrame(data=backtest_data, columns=['timestamp', 'mid_price', 'delta'])
-
         l2_df = l2_df.assign(
             Open=l2_df['mid_price'], High=l2_df['mid_price'], Low=l2_df['mid_price'], Close=l2_df['mid_price'])
 

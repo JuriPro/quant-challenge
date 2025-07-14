@@ -1,6 +1,7 @@
 import os
 import json
 import numpy as np
+import pandas as pd
 from backtesting import Strategy
 
 
@@ -19,6 +20,16 @@ class OrderBookStrategy(Strategy):
         signal[mask_up] = 1
         signal[mask_down] = -1
 
+        # Save Signal for Report
+        timestamp = self.data.index.values.astype(np.int64) // 10 ** 9
+        store_index_df = pd.DataFrame(data={'ts': timestamp, 'signal': signal})
+        signal_json = store_index_df.to_json(orient="index")
+        signal_json = json.loads(signal_json)
+        save_signal_path = os.path.join('..', 'report', 'signal.json')
+        with open(save_signal_path, "w") as f:
+            json.dump(signal_json, f, indent=4)
+
+        # Create Strategy Signal
         self.signal = self.I(lambda x: x, signal)
 
     def next(self):
