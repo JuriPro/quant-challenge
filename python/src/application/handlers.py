@@ -82,7 +82,9 @@ class PerformBacktest:
         backtest_df.set_index(backtest_df['timestamp'], inplace=True, drop=True)
         
         bt = Backtest(backtest_df, OrderBookStrategy, cash=100000, commission=.002, exclusive_orders=True, finalize_trades=True)
-        stats = bt.run()
+
+        stats = bt.run(delta_jump_level=command.delta_jump_level,
+                       signal_path=command.path_to_report_folder)
         
         print_result = save_strategy_result(stats, save_folder_path=command.path_to_report_folder)
         

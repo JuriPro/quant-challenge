@@ -33,6 +33,7 @@ class PreprocessRawL2Data:
 
 @dataclass
 class PerformBacktestCmd:
+    delta_jump_level: float = 15
     path_to_backtest_data: str = os.path.join('..', 'data', 'backtestData.csv')
     path_to_report_folder: str = os.path.join('..', 'report')
 
