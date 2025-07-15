@@ -32,21 +32,20 @@ def setup_logging() -> logging.Logger:
 
 
 async def collect_l2_data(mediator: Mediator, logger: logging.Logger) -> Any:
-    if not cfg.get('use_previous_data', False):
-        try:
-            result = await mediator.send(
-                CollectL2data(
-                    symbol=cfg['symbol'],
-                    depth=cfg['depth'],
-                    collection_time_min=cfg['collection_time_min'],
-                    collection_interval_sec=cfg['collection_interval_sec']
-                )
+    try:
+        result = await mediator.send(
+            CollectL2data(
+                symbol=cfg['symbol'],
+                depth=cfg['depth'],
+                collection_time_min=cfg['collection_time_min'],
+                collection_interval_sec=cfg['collection_interval_sec']
             )
-            logger.info(result)
-            return result
-        except Exception as e:
-            logger.error(f"Error collecting L2 data: {e}", exc_info=True)
-            raise
+        )
+        logger.info(result)
+        return result
+    except Exception as e:
+        logger.error(f"Error collecting L2 data: {e}", exc_info=True)
+        raise
 
 
 async def preprocess_data(mediator: Mediator, logger: logging.Logger) -> Any:
