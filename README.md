@@ -32,7 +32,8 @@
 ### Usage: Python Implementation
 
 1. __*Frome console: `uv run main.py` OR `python main.py`*__
-2. __*The `Report / Signal / Trades` will be saved in to `python/report/` folder*__
+2. __*The collected and preprocessed data is located here: `python/data/`*__
+3. __*The `Report / Signal / Trades` will be saved in to `python/report/` folder*__
 
 ------------
 
