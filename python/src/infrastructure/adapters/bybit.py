@@ -1,7 +1,6 @@
 import sys
 import asyncio
 import aiohttp
-import numpy as np
 
 
 class BybitClient:
