@@ -41,7 +41,7 @@ class OrderBookStrategy(Strategy):
             if self.signal[-1] == 1:
                 tp = self.data.mid_price[-1] + 0.02 * self.data.mid_price[-1]
                 sl = self.data.mid_price[-1] - 0.01 * self.data.mid_price[-1]
-                self.sell(tp=tp, sl=sl)
+                self.buy(tp=tp, sl=sl)
             
             elif self.signal[-1] == -1:
                 tp = self.data.mid_price[-1] - 0.02 * self.data.mid_price[-1]
